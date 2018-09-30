@@ -1,7 +1,7 @@
 #include "mario_js.h"
 #include "native_arduino_basic.h"
 
-void dump(const char*s) {
+void debug(const char*s) {
 	Serial.print(s);  
 }
 
@@ -9,7 +9,7 @@ void setup() {
 	Serial.begin(19200);
 	delay(200);
 
-	_debug_func = dump;
+	_debug_func = debug;
 	vm_t vm;
 	vm_init(&vm);
  

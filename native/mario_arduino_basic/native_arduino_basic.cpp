@@ -80,10 +80,10 @@ var_t* native_delay(vm_t* vm, var_t* env, void* data) {
 #define CLS_SERIAL "Serial"
 
 void reg_native_arduino_basic(vm_t* vm) {
-	vm_reg_var(vm, "", "LED_BUILTIN", var_new_int(LED_BUILTIN));
-	vm_reg_var(vm, "", "OUTPUT", var_new_int(OUTPUT));
-	vm_reg_var(vm, "", "LOW", var_new_int(LOW));
-	vm_reg_var(vm, "", "HIGH", var_new_int(HIGH));
+	vm_reg_var(vm, "", "LED_BUILTIN", var_new_int(LED_BUILTIN), true);
+	vm_reg_var(vm, "", "OUTPUT", var_new_int(OUTPUT), true);
+	vm_reg_var(vm, "", "LOW", var_new_int(LOW), true);
+	vm_reg_var(vm, "", "HIGH", var_new_int(HIGH), true);
 
 	vm_reg_native(vm, "", "print(str)", native_serial_print, NULL);
 	vm_reg_native(vm, "", "delay(msec)", native_delay, NULL);
